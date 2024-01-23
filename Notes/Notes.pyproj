@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ef44577e-c763-4452-b5d8-e56579fac220</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Notes.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,7 +23,8 @@
   <ItemGroup>
     <Compile Include="JsonManager.py" />
     <Compile Include="Note.py" />
-    <Compile Include="Notes.py" />
+    <Compile Include="Main.py" />
+    <Compile Include="NotesManager.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
