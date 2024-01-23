@@ -1,4 +1,5 @@
 from re import I
+from typing import overload
 from Note import Note
 
 class NotesManager:
@@ -10,7 +11,7 @@ class NotesManager:
     def add(self, name, description):
         last_id = max(note.id for note in self.notes)
         
-        self.notes.append(Note(last_id + 1, name, description))
+        self.notes.append(Note(last_id + 1, name, description, None))
         
     def edit(self, id, new_name, new_description):
         note_index = self.get_index(id)
@@ -32,5 +33,13 @@ class NotesManager:
     def read(self):
         return self.notes
     
+    def read_by_id(self, id):
+        index = self.get_index(id)
+        
+        if index == None:
+            return
+        
+        return self.notes[self.get_index(id)]
+    
     def get_index(self, id):
-        return(next((index for (index, note) in enumerate(self.notes) if note.id == id), None))
+        return next((index for (index, note) in enumerate(self.notes) if note.id == id), None)

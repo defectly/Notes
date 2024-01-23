@@ -13,7 +13,7 @@ class JsonManager:
         loaded_notes = list()
         
         for obj in data:
-            note = Note(obj['id'], obj['name'], obj['description'])
+            note = Note(obj['id'], obj['name'], obj['description'], obj['date'])
             loaded_notes.append(note)
         
         return loaded_notes
