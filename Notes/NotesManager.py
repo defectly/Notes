@@ -9,8 +9,12 @@ class NotesManager:
         self.notes = notes
     
     def add(self, name, description):
-        last_id = max(note.id for note in self.notes)
         
+        if(len(self.notes) > 0):
+            last_id = max(note.id for note in self.notes)
+        else:
+            last_id = -1
+            
         self.notes.append(Note(last_id + 1, name, description, None))
         
     def edit(self, id, new_name, new_description):
